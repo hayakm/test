@@ -1,0 +1,62 @@
+<section *ngIf="Login">
+  <mat-card-title>Move YourSelf</mat-card-title>
+
+  <form [formGroup]="formLogin">
+    <label for="fname">Nome</label>
+    <input formControlName="nome" type="text" placeholder="Nome" fxFlex>
+
+    <label for="lname">Senha</label>
+    <input formControlName="senha" type="text" placeholder="*****" fxFlex>
+
+    <!-- <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Message</mat-label>
+      <input
+        type="password"
+        matInput
+        #message
+        maxlength="256"
+        placeholder="Ex. I need help with..."
+      />
+      <mat-hint align="start"
+        ><strong>Don't disclose personal info</strong>
+      </mat-hint>
+      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+    </mat-form-field> -->
+
+    <button mat-raised-button color="primary" [disabled]="!formLogin.valid" (click)="login(formLogin.value)">Entrar</button>
+    <button mat-button>Cadastrar</button>
+  </form>
+</section>
+
+<section *ngIf="Cadastro">
+  <mat-card-title>Move YourSelf</mat-card-title>
+
+  <form [formGroup]="formCadastro">
+    <label for="fname">Nome</label>
+    <input formControlName="Nome" type="text" placeholder="Nome completo">
+
+    <label for="lname">CPF</label>
+    <input formControlName="CPF" type="text" placeholder="CPF">
+
+    <label for="lname">Data de Nascimento</label>
+    <input formControlName="DataNascimento" type="text" placeholder="DD/MM/AAAA">
+
+    <label for="lname">Endereço</label>
+    <input formControlName="Endereco" type="text" placeholder="Rua/Av xx....">
+
+    <label for="lname">Telefone</label>
+    <input formControlName="Telefone" type="text" placeholder="(xx) xxxxx-xxxx">
+
+    <label for="lname">Genero</label>
+    <input formControlName="Genero" type="text" placeholder="(xx) xxxxx-xxxx">
+
+    <label for="lname">E-mail</label>
+    <input formControlName="Email" type="text" placeholder="seu.email@dominio.com">
+
+    <label for="lname">Senha</label>
+    <input formControlName="Senha" type="text" placeholder="**********">
+
+    <button mat-raised-button color="primary" (click)="Cadastrar(formCadastro.value)" [disabled]="!formCadastro.valid">Cadastrar</button>
+    <button mat-button>Editar</button>
+  </form>
+</section>

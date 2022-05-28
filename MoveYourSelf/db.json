@@ -1,0 +1,18 @@
+{
+  "Usuarios": [
+    {
+      "id": 1,
+      "nome": "Jao",
+      "cpf": "183.569.874-25",
+      "senha": "123Mudar",
+      "email": "jao.torrichelli@gmail.com",
+      "telefone": "(16) 3382-6060",
+      "endereco": "Rua das capivaras, 666",
+      "dataNasc": "01/01/1994",
+      "genero": "M"
+    }
+  ],
+  "BioImpedancia": {
+    "name": "sla"
+  }
+}
