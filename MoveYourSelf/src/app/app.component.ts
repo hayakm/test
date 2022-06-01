@@ -8,7 +8,7 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class AppComponent {
   title = 'MoveYourSelf';
-  cadastro = false
+  cadastro = true
 
   email = new FormControl('', [Validators.required, Validators.email]);
 

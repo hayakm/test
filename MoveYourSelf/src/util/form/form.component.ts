@@ -10,8 +10,8 @@ import { IUsuario } from 'src/interfaces/interfaces';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  @Input() Login = true;
-  @Input() Cadastro = false;
+  @Input() Login = false;
+  @Input() Cadastro = true;
 
   formCadastro = this._fb.group({
     nome: ['', Validators.required],
@@ -60,7 +60,7 @@ export class FormComponent implements OnInit {
   public async Cadastrar(data: IUsuario) {
     try {
       this._service.cadastrarUsuario(data).subscribe(success => {
-        this._toastr.success('cadastrado com sucesso!')
+        this._toastr.success('Cadastrado com sucesso!')
         this.limparCampos()
       })
     } catch (err) {
