@@ -1,0 +1,42 @@
+<section>
+    <mat-card>
+
+
+        <mat-card-title>
+            <button mat-icon-button aria-label="Example icon button with a delete icon" (click)="returnToLogin()">
+                <mat-icon>chevron_left</mat-icon>
+            </button>
+            Move YourSelf
+        </mat-card-title>
+
+        <form [formGroup]="formCadastro">
+            <label for="nome">Nome</label>
+            <input formControlName="nome" type="text" placeholder="Nome completo">
+
+            <label for="cpf">CPF</label>
+            <input formControlName="cpf" type="number" placeholder="CPF">
+
+            <label for="senha">Senha</label>
+            <input formControlName="senha" type="password" placeholder="**********">
+
+            <label for="dataNasc">Data de Nascimento</label>
+            <input formControlName="dataNasc" type="date" placeholder="DD/MM/AAAA">
+
+            <label for="endereco">Endereço</label>
+            <input formControlName="endereco" type="text" placeholder="Rua/Av xx....">
+
+            <label for="telefone">Telefone</label>
+            <input formControlName="telefone" type="number" placeholder="(xx) xxxxx-xxxx">
+
+            <label for="genero">Genero</label>
+            <input formControlName="genero" type="" placeholder="Selecione um Género">
+
+            <label for="email">E-mail</label>
+            <input formControlName="email" type="email" placeholder="seu.email@dominio.com">
+
+            <button mat-raised-button color="primary" (click)="Cadastrar(formCadastro.value)"
+                [disabled]="!formCadastro.valid">Cadastrar</button>
+            <!-- <button mat-button *ngIf="usuarioLogado.role == 'Adm'">Editar</button> -->
+        </form>
+    </mat-card>
+</section>

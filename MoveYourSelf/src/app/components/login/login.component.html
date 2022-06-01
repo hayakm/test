@@ -1,0 +1,15 @@
+<mat-card>
+    <mat-card-title>Move YourSelf</mat-card-title>
+
+    <form [formGroup]="formLogin">
+      <label for="fname">Nome</label>
+      <input formControlName="nome" type="text" placeholder="Nome" fxFlex>
+
+      <label for="lname">Senha</label>
+      <input formControlName="senha" type="password" placeholder="*****" fxFlex>
+
+      <!-- (click)="login(formLogin.value)" -->
+      <button mat-raised-button color="primary" [disabled]="!formLogin.valid" (click)="redirectTo(formLogin.value,1)">Entrar</button>
+      <button mat-button (click)="redirectTo(formLogin.value,2)">Cadastrar</button>
+    </form>
+  </mat-card>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DbService } from 'src/app/service/db.service';
 
 @Component({
   selector: 'app-info-usuarios',
@@ -9,14 +11,22 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 export class InfoUsuariosComponent implements OnInit {
   pagamento: FormGroup;
   formasPagamento: FormGroup;
+  id: any;
+  usuarioLogado: any;
 
-  constructor(fb: FormBuilder) {
-    this.pagamento = fb.group({
+  constructor(
+    private _fb: FormBuilder,
+    private _service: DbService,
+    private _activatedRoute: ActivatedRoute,
+    private _router: Router
+
+  ) {
+    this.pagamento = this._fb.group({
       pgDia: false,
       pgAtraso: false,
     });
 
-    this.formasPagamento = fb.group({
+    this.formasPagamento = this._fb.group({
       dinheiro: false,
       pix: false,
       cartao: false,
@@ -29,8 +39,20 @@ export class InfoUsuariosComponent implements OnInit {
   dataSource = ELEMENT_DATA;
 
   ngOnInit(): void {
+    this._activatedRoute.params.subscribe(res => this.id = res['id']);
+    this.getUsuarios(this.id);
   }
 
+
+  public async getUsuarios(id: any) {
+    await this._service.buscarUsuarios().subscribe(x => {
+      this.usuarioLogado = x.find(u => u.id == id);
+    })
+  }
+
+  public returnToLogin(){
+    this._router.navigateByUrl(`/login`);
+  }
 }
 
 export interface PeriodicElement {

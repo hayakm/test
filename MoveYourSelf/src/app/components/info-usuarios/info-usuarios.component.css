@@ -1,13 +1,23 @@
-mat-grid-tile{
+mat-grid-tile {
     margin: 24px;
     overflow: initial !important;
 }
 
-.column > mat-card{
+.column>mat-card {
     margin: 24px;
 }
 
 
 table {
     width: 100%;
-  }
+}
+
+.sample {
+    position: inherit;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.title{
+    text-align: center;
+}

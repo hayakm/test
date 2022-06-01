@@ -1,15 +1,16 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Component, Input, OnInit } from '@angular/core';
+import { Validators, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { DbService } from 'src/app/service/db.service';
 import { IUsuario } from 'src/interfaces/interfaces';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.css']
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
 })
-export class FormComponent implements OnInit {
+export class LoginComponent implements OnInit {
   @Input() Login = true;
   @Input() Cadastro = false;
 
@@ -35,7 +36,9 @@ export class FormComponent implements OnInit {
   constructor(
     private _fb: FormBuilder,
     private _service: DbService,
-    private _toastr: ToastrService
+    private _toastr: ToastrService,
+    private _router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -88,5 +91,21 @@ export class FormComponent implements OnInit {
   public setCadastroView() {
     this.Cadastro = !this.Cadastro
     this.Login = !this.Login
+  }
+
+  public async redirectTo(data: any, code: any) {
+    console.log(data, 'data');
+    console.log(code, 'code');
+
+    if (code == 1) {
+      await this._service.buscarUsuarios().subscribe(usuarios => {
+        this.usuarioLogado = usuarios.find(x => {
+          x.nome == data.nome && x.senha == data.senha
+          this._router.navigateByUrl(`${x.id}/info`);
+        })
+      })
+    } else {
+      this._router.navigateByUrl(`/cadastro`);
+    }
   }
 }
