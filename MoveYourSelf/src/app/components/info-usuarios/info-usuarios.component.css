@@ -1,0 +1,13 @@
+mat-grid-tile{
+    margin: 24px;
+    overflow: initial !important;
+}
+
+.column > mat-card{
+    margin: 24px;
+}
+
+
+table {
+    width: 100%;
+  }

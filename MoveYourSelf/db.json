@@ -9,11 +9,24 @@
       "telefone": "(16) 3382-6060",
       "endereco": "Rua das capivaras, 666",
       "dataNasc": "01/01/1994",
-      "genero": "M"
+      "genero": "M",
+      "role": "Adm"
+    },
+    {
+      "id": 1,
+      "nome": "Caio",
+      "cpf": "123.456.874-25",
+      "senha": "123Mudar",
+      "email": "caio.caio@gmail.com",
+      "telefone": "(16) 3382-6060",
+      "endereco": "Rua das capivaras, 666",
+      "dataNasc": "01/01/1994",
+      "genero": "M",
+      "role": "Adm"
     },
     {
       "nome": "",
-      "cPF": "",
+      "cpf": "",
       "dataNasc": "",
       "endereco": "",
       "genero": "",
@@ -23,26 +36,71 @@
       "id": 2
     },
     {
-      "nome": "",
-      "cPF": "",
-      "dataNasc": "",
-      "endereco": "",
-      "genero": "",
-      "senha": "",
-      "email": "",
-      "telefone": "",
+      "nome": null,
+      "cpf": null,
+      "dataNasc": null,
+      "endereco": null,
+      "genero": null,
+      "senha": null,
+      "email": null,
+      "telefone": null,
       "id": 3
     },
     {
+      "nome": null,
+      "cpf": null,
+      "dataNasc": null,
+      "endereco": null,
+      "genero": null,
+      "senha": null,
+      "email": null,
+      "telefone": null,
+      "id": 4
+    },
+    {
+      "nome": null,
+      "cpf": null,
+      "dataNasc": null,
+      "endereco": null,
+      "genero": null,
+      "senha": null,
+      "email": null,
+      "telefone": null,
+      "id": 5
+    },
+    {
+      "nome": null,
+      "cpf": null,
+      "dataNasc": null,
+      "endereco": null,
+      "genero": null,
+      "senha": null,
+      "email": null,
+      "telefone": null,
+      "id": 6
+    },
+    {
+      "nome": "Test",
+      "cpf": 123456789,
+      "dataNasc": "2000-11-14",
+      "endereco": "X",
+      "genero": "M",
+      "senha": "123",
+      "email": "usuario.teste@gmail.com",
+      "telefone": 12,
+      "id": 7
+    },
+    {
       "nome": "",
-      "cPF": "",
+      "cpf": "",
       "dataNasc": "",
       "endereco": "",
       "genero": "",
       "senha": "",
       "email": "",
       "telefone": "",
-      "id": 4
+      "role": "User",
+      "id": 8
     }
   ],
   "BioImpedancia": {

@@ -1,62 +1,53 @@
 <section *ngIf="Login">
-  <mat-card-title>Move YourSelf</mat-card-title>
+  <mat-card>
+    <mat-card-title>Move YourSelf</mat-card-title>
 
-  <form [formGroup]="formLogin">
-    <label for="fname">Nome</label>
-    <input formControlName="nome" type="text" placeholder="Nome" fxFlex>
+    <form [formGroup]="formLogin">
+      <label for="fname">Nome</label>
+      <input formControlName="nome" type="text" placeholder="Nome" fxFlex>
 
-    <label for="lname">Senha</label>
-    <input formControlName="senha" type="password" placeholder="*****" fxFlex>
+      <label for="lname">Senha</label>
+      <input formControlName="senha" type="password" placeholder="*****" fxFlex>
 
-    <!-- <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Message</mat-label>
-      <input
-        type="password"
-        matInput
-        #message
-        maxlength="256"
-        placeholder="Ex. I need help with..."
-      />
-      <mat-hint align="start"
-        ><strong>Don't disclose personal info</strong>
-      </mat-hint>
-      <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
-    </mat-form-field> -->
-
-    <button mat-raised-button color="primary" [disabled]="!formLogin.valid" (click)="login(formLogin.value)">Entrar</button>
-    <button mat-button>Cadastrar</button>
-  </form>
+      <!-- (click)="login(formLogin.value)" -->
+      <button mat-raised-button color="primary" [disabled]="!formLogin.valid" routerLink="/info">Entrar</button>
+      <button mat-button routerLink="cadastro">Cadastrar</button>
+    </form>
+  </mat-card>
 </section>
 
 <section *ngIf="Cadastro">
-  <mat-card-title>Move YourSelf</mat-card-title>
+  <mat-card>
+    <mat-card-title>Move YourSelf</mat-card-title>
 
-  <form [formGroup]="formCadastro">
-    <label for="Nome">Nome</label>
-    <input formControlName="Nome" type="text" placeholder="Nome completo">
+    <form [formGroup]="formCadastro">
+      <label for="nome">Nome</label>
+      <input formControlName="nome" type="text" placeholder="Nome completo">
 
-    <label for="CPF">CPF</label>
-    <input formControlName="CPF" type="number" placeholder="CPF" >
+      <label for="cpf">CPF</label>
+      <input formControlName="cpf" type="number" placeholder="CPF">
 
-    <label for="Senha">Senha</label>
-    <input formControlName="Senha" type="password" placeholder="**********">
+      <label for="senha">Senha</label>
+      <input formControlName="senha" type="password" placeholder="**********">
 
-    <label for="DataNascimento">Data de Nascimento</label>
-    <input formControlName="DataNascimento" type="date" placeholder="DD/MM/AAAA">
+      <label for="dataNasc">Data de Nascimento</label>
+      <input formControlName="dataNasc" type="date" placeholder="DD/MM/AAAA">
 
-    <label for="Endereco">Endereço</label>
-    <input formControlName="Endereco" type="text" placeholder="Rua/Av xx....">
+      <label for="endereco">Endereço</label>
+      <input formControlName="endereco" type="text" placeholder="Rua/Av xx....">
 
-    <label for="Telefone">Telefone</label>
-    <input formControlName="Telefone" type="number" placeholder="(xx) xxxxx-xxxx">
+      <label for="telefone">Telefone</label>
+      <input formControlName="telefone" type="number" placeholder="(xx) xxxxx-xxxx">
 
-    <label for="Genero">Genero</label>
-    <input formControlName="Genero" type="" placeholder="Selecione um Género">
+      <label for="genero">Genero</label>
+      <input formControlName="genero" type="" placeholder="Selecione um Género">
 
-    <label for="Email">E-mail</label>
-    <input formControlName="Email" type="text" placeholder="seu.email@dominio.com">
+      <label for="email">E-mail</label>
+      <input formControlName="email" type="email" placeholder="seu.email@dominio.com">
 
-    <button mat-raised-button color="primary" (click)="Cadastrar(formCadastro.value)" [disabled]="!formCadastro.valid">Cadastrar</button>
-    <button mat-button>Editar</button>
-  </form>
+      <button mat-raised-button color="primary" (click)="Cadastrar(formCadastro.value)"
+        [disabled]="!formCadastro.valid">Cadastrar</button>
+      <button mat-button *ngIf="usuarioLogado.role == 'Adm'">Editar</button>
+    </form>
+  </mat-card>
 </section>

@@ -12,12 +12,20 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule } from 'ngx-toastr';
 import {MatInputModule} from '@angular/material/input';
+import { InfoUsuariosComponent } from './components/info-usuarios/info-usuarios.component';
+import { RoutingModule } from 'src/util/form/routing.module';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FormComponent
+    FormComponent,
+    InfoUsuariosComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +37,11 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     HttpClientModule,
     ToastrModule.forRoot(),
-    MatInputModule
+    MatInputModule,
+    RoutingModule ,
+    MatCheckboxModule,
+    MatGridListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

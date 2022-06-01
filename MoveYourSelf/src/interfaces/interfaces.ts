@@ -8,4 +8,5 @@ export interface IUsuario {
     endereco: string,
     dataNasc: string,
     genero: string,
+    role: string
 }
