@@ -13,7 +13,7 @@
       "role": "Adm"
     },
     {
-      "id": 1,
+      "id": 2,
       "nome": "Caio",
       "cpf": "123.456.874-25",
       "senha": "123Mudar",
@@ -25,61 +25,6 @@
       "role": "Adm"
     },
     {
-      "nome": "",
-      "cpf": "",
-      "dataNasc": "",
-      "endereco": "",
-      "genero": "",
-      "senha": "",
-      "email": "",
-      "telefone": "",
-      "id": 2
-    },
-    {
-      "nome": null,
-      "cpf": null,
-      "dataNasc": null,
-      "endereco": null,
-      "genero": null,
-      "senha": null,
-      "email": null,
-      "telefone": null,
-      "id": 3
-    },
-    {
-      "nome": null,
-      "cpf": null,
-      "dataNasc": null,
-      "endereco": null,
-      "genero": null,
-      "senha": null,
-      "email": null,
-      "telefone": null,
-      "id": 4
-    },
-    {
-      "nome": null,
-      "cpf": null,
-      "dataNasc": null,
-      "endereco": null,
-      "genero": null,
-      "senha": null,
-      "email": null,
-      "telefone": null,
-      "id": 5
-    },
-    {
-      "nome": null,
-      "cpf": null,
-      "dataNasc": null,
-      "endereco": null,
-      "genero": null,
-      "senha": null,
-      "email": null,
-      "telefone": null,
-      "id": 6
-    },
-    {
       "nome": "Test",
       "cpf": 123456789,
       "dataNasc": "2000-11-14",
@@ -88,31 +33,7 @@
       "senha": "123",
       "email": "usuario.teste@gmail.com",
       "telefone": 12,
-      "id": 7
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "dataNasc": "",
-      "endereco": "",
-      "genero": "",
-      "senha": "",
-      "email": "",
-      "telefone": "",
-      "role": "User",
-      "id": 8
-    },
-    {
-      "nome": "",
-      "cpf": "",
-      "dataNasc": "",
-      "endereco": "",
-      "genero": "",
-      "senha": "",
-      "email": "",
-      "telefone": "",
-      "role": "User",
-      "id": 9
+      "id": 3
     },
     {
       "nome": "teste",
@@ -124,7 +45,7 @@
       "email": "12",
       "telefone": 12,
       "role": "User",
-      "id": 10
+      "id": 4
     },
     {
       "nome": "Caio",
@@ -136,7 +57,7 @@
       "email": "231",
       "telefone": 123,
       "role": "User",
-      "id": 11
+      "id": 5
     }
   ],
   "BioImpedancia": {

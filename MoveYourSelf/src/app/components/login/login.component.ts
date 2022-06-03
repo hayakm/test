@@ -15,7 +15,7 @@ export class LoginComponent implements OnInit {
   @Input() Cadastro = false;
 
   public usuarios: IUsuario[] = [];
-  public usuarioLogado: any;
+  public usuarioLogado?: IUsuario;
 
   formCadastro = this._fb.group({
     nome: ['', Validators.required],
@@ -67,9 +67,9 @@ export class LoginComponent implements OnInit {
         this.Cadastro = !this.Cadastro
         this.Login = !this.Login
 
-        return this._toastr.success(`Bem vindo - ${data.nome}!`)
+        return this._toastr.success("Bem vindo - ${data.nome}!")
       }
-      return this._toastr.error(`Oops, dados incorretos!`)
+      return this._toastr.error("Oops, dados incorretos!")
     })
   }
 
@@ -82,7 +82,7 @@ export class LoginComponent implements OnInit {
         this.limparCampos()
       })
     } catch (err) {
-      this._toastr.error('Erro ao cadastrar usuario')
+      this._toastr.error("Erro ao cadastrar usuario")
     }
 
     await this._service.buscarUsuarios().subscribe(x => { this.usuarios = x });
@@ -93,17 +93,16 @@ export class LoginComponent implements OnInit {
     this.Login = !this.Login
   }
 
-  public async redirectTo(data: any, code: any) {
-    console.log(data, 'data');
-    console.log(code, 'code');
-
+  public async redirectTo(data: IUsuario, code: any) {
     if (code == 1) {
-      await this._service.buscarUsuarios().subscribe(usuarios => {
-        this.usuarioLogado = usuarios.find(x => {
-          x.nome == data.nome && x.senha == data.senha
-          this._router.navigateByUrl(`${x.id}/info`);
-        })
-      })
+      try {
+        this.usuarioLogado = this.usuarios.find(x => { return x.nome == data.nome && x.senha == data.senha })
+
+        if (this.usuarioLogado)
+          this._router.navigateByUrl(`${this.usuarioLogado?.id}/info`);
+      } catch (err) {
+        this._toastr.error("Usuario não encontrado, revise os dados")
+      }
     } else {
       this._router.navigateByUrl(`/cadastro`);
     }
