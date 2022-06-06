@@ -7,7 +7,7 @@ import { IUsuario } from 'src/interfaces/interfaces';
   providedIn: 'root'
 })
 export class DbService {
-  private readonly _base = 'http://localhost:3000';
+  private readonly _base = 'https://move-your-self-server.herokuapp.com';
   constructor(private httpClient: HttpClient) { }
 
   public cadastrarUsuario(usuario: IUsuario): Observable<IUsuario> {
